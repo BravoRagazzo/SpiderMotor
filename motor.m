@@ -22,9 +22,16 @@ eig = eig(A);
 
 %% LQR continuous
 Q_LQ = eye(2);
-R_LQ = 1;
+R_LQ = 0.001;
 
 [K, S, CLP] = lqr(A,B,Q_LQ,R_LQ);
+
+%% LQR discrete
+
+sysdis = c2d(sys,Ts);
+
+[Kd, Sd, CLPd] = dlqr(sysdis.A,sysdis.B,Q_LQ,R_LQ);
+
 
 
 
