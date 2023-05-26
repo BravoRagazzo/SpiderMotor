@@ -9,6 +9,6 @@ fr = 0.000294;              % friction coefficient
 
 %% Parameters uncertanties
 w = [1 1]';                 % uncertanties vector        
-Ts = 0.001;                 % Sampling time
+Ts = 0.001;                 % sampling time
 Bw_bar = [-0.0085 -0.0006;  % uncertanties matrix 
           -0.0603 0.0002];
