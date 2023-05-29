@@ -21,28 +21,24 @@ eig = eig(A);
 
 
 %% LQR continuous
-Q_LQ = eye(2);
-R_LQ = 0.001;
+%Q_LQ = 100*[0.1 0; 0 10];
+Q_LQ = 100*eye(2);
+R_LQ = 1;
 
-[K, S, CLP] = lqr(A,B,Q_LQ,R_LQ);
+[K, S, CLP] = lqr(sys,Q_LQ,R_LQ);
 
 %% LQR discrete
 
-A = [-Ra/L -Ke/L; Kt/J1 -fr/J1];
-B = [1/L 0]';
-C = eye(2);
-D = [0 0]';
-
-B_tilda = [B(1) Bw_bar(1,1) Bw_bar(1,2); B(2) Bw_bar(2,1) Bw_bar(2,2)]
-
-
-
 sysdis = c2d(sys,Ts);
 
+B_tilda = [sysdis.B(1) Bw_bar(1,1) Bw_bar(1,2); sysdis.B(2) Bw_bar(2,1) Bw_bar(2,2)];
+D_tilda = [0 0 0 ; 0 0 0];
+
+
+Q_LQ = 100*[0.1 0;0 1];
+R_LQ = 1;
 
 [Kd, Sd, CLPd] = dlqr(sysdis.A,sysdis.B,Q_LQ,R_LQ);
-
-
 
 
 
