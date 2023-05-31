@@ -50,4 +50,8 @@ iref = -A(2,2)*nref/A(2,1);
 
 yref = [iref nref]';
 
-%%
+%% Unconstrained MPC
+
+N = 10;
+
+
