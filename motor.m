@@ -52,7 +52,7 @@ yref = [iref nref]';
 
 %% Unconstrained MPC
 
-N = 10;
+N = 3;
 
 %% change prediction horizon N
 N1 = 5;
