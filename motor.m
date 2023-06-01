@@ -84,8 +84,8 @@ S1=zeros(2);
 N2=100;
 S2=Sd; 
 
-%% constraints
+%% state constraints
 
 A_constr = [1 0; 0 1; -1 0; 0 -1];
-b_constr = [2;150;2;150];
+b_constr = [x1_max;x2_max;x1_min;x2_min];
 
