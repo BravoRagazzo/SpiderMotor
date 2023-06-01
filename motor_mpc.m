@@ -8,7 +8,7 @@
 % umin: inputs lower limit (scalar)
 % umax: inputs upper limit (scalar)
 % X: measured status at the current instant time
-function u = motor_mpc(A,B,Q,R,S,u_max,u_min,N,x)
+function u = motor_mpc(A,B,Q,R,S,A_constr,b_constr,u_max,u_min,N,x)
 
 %% Compute calligraphic Q and R matrices 
 N = 10;                             %prediction horizon                    
@@ -38,14 +38,14 @@ H = Bsig'*Qsig*Bsig + Rsig;
 M = Asig'*Qsig*Asig;
 F = Asig'*Qsig*Bsig;
 f = F'*x;
-
+f
 %% Define input and status constraints 
 lb = u_min;
 ub = u_max;
 %% Solve the opt problem using quadprog
 options = optimset('Algorithm', 'interior-point-convex','Diagnostics','off', ...
         'Display','off');
-U = quadprog(H,f,[],[],[],[],lb,ub,[],options);
+U = quadprog(H,f,A_constr,b_constr,[],[],lb,ub,[],options);
 
 %% Apply receding horizon principle
 u = U(1);
