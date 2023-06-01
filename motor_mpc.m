@@ -11,7 +11,7 @@
 function u = motor_mpc(A,B,Q,R,S,A_constr,b_constr,u_max,u_min,N,x)
 
 %% Compute calligraphic Q and R matrices 
-N = 3;                             %prediction horizon                    
+%prediction horizon                    
 Qsig = blkdiag(kron(eye(N-1),Q),S); % Q matrix for Open-Loop MPC (with Q)
 Rsig = kron(eye(N),R);
 
@@ -39,19 +39,21 @@ M = Asig'*Qsig*Asig;
 F = Asig'*Qsig*Bsig;
 f = F'*x;
 
-X_M = [2;2;2;150;150;150];
+X_M = [];
+for i=1:N
+    X_M = [X_M;2;150];
+end
+
 X_m = -X_M;
 A_constr = [Bsig; -Bsig];
-b_constr = [(X_M - Asig*x); (X_m - Asig*x)];
-
+b_constr = [(X_M - Asig*x); -(X_m - Asig*x)];
 %% Define input and status constraints 
 lb = u_min;
 ub = u_max;
 %% Solve the opt problem using quadprog
 options = optimset('Algorithm', 'interior-point-convex','Diagnostics','off', ...
         'Display','off');
-U = quadprog(H,f,A_constr,b_constr,[],[],lb,ub,[],options);
-
+U = quadprog(H,f, A_constr,b_constr,[],[],lb,ub,[],options);
 %% Apply receding horizon principle
 u = U(1);
 end

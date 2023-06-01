@@ -43,7 +43,7 @@ R_LQ = 1;
 
 
 %% Computing uBar and yBar
-nref = 0;
+nref = 100;
 
 uBar = -(A(1,1)*(-A(2,2)*nref/A(2,1)) + A(1,2)*nref)*L;
 iref = -A(2,2)*nref/A(2,1);
@@ -85,7 +85,7 @@ N2=100;
 S2=Sd; 
 
 %% state constraints
-
-A_constr = [1 0; 0 1; -1 0; 0 -1];
-b_constr = [x1_max;x2_max;x1_min;x2_min];
+N = 10;
+%A_constr = [1 0; 0 1; -1 0; 0 -1];
+%b_constr = [x1_max;x2_max;x1_min;x2_min];
 
