@@ -32,8 +32,17 @@ D_tilda = [0 0 0 ; 0 0 0];
 
 Q_LQ = eye(2);
 R_LQ = 1;
+Q_LQ1 = 10*eye(2);
+R_LQ1 = 1;
+Q_LQ2 = 1000*eye(2);
+R_LQ2 = 1;
+Q_LQ3 = eye(2);
+R_LQ3 = 100;
 
 [Kd, Sd, CLPd] = dlqr(sysdis.A,sysdis.B,Q_LQ,R_LQ);
+[Kd1, Sd1, CLPd1] = dlqr(sysdis.A,sysdis.B,Q_LQ1,R_LQ1);
+[Kd2, Sd2, CLPd2] = dlqr(sysdis.A,sysdis.B,Q_LQ2,R_LQ2);
+[Kd3, Sd3, CLPd3] = dlqr(sysdis.A,sysdis.B,Q_LQ3,R_LQ3);
 
 %% Computing uBar and yBar
 nref = 100;
