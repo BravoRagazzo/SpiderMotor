@@ -1,4 +1,5 @@
 %% LQ Discrete
+close all
 sim('regulator_LQR_discrete_COMPARISON.mdl')
 
 % Current
@@ -16,7 +17,7 @@ grid on
 legend('Q=I_2 R=1','Q=10*I_2 R=1','Q=1000*I_2 R=1','Q=I_2 R=100','i\_ref', 'Location','northeast')
 xlabel("Time [s]")
 ylabel("Current [A]")
-saveas(gcf, 'img/LQR_i_QR_noDist.svg', 'svg');
+saveas(gcf, 'img/LQR_QR/LQR_i_QR.svg', 'svg');
 
 figure(2)
 zoomX = [0.059 0.06];
@@ -36,7 +37,7 @@ xlabel("Time [s]")
 ylabel("Current [A]")
 legend('Q=I_2 R=1','Q=10*I_2 R=1','Q=1000*I_2 R=1','Q=I_2 R=100','i\_ref', 'Location','northeast')
 grid on
-saveas(gcf, 'img/LQR_i_QR_zoom_noDist.svg', 'svg');
+saveas(gcf, 'img/LQR_QR/LQR_i_QR_zoom.svg', 'svg');
 
 % Velocity
 figure(3)
@@ -54,7 +55,7 @@ legend('Q=I_2 R=1','Q=10*I_2 R=1','Q=1000*I_2 R=1','Q=I_2 R=100','n\_ref', 'Loca
 xlabel("Time [s]")
 ylabel("Velocity [rad/s]")
 ylim([65 105])
-saveas(gcf, 'img/LQR_n_QR_noDist.svg', 'svg');
+saveas(gcf, 'img/LQR_QR/LQR_n_QR.svg', 'svg');
 
 figure(4)
 zoomX = [0.059 0.06];
@@ -74,7 +75,7 @@ xlabel("Time [s]")
 ylabel("Velocity [rad/s]")
 legend('Q=I_2 R=1','Q=10*I_2 R=1','Q=1000*I_2 R=1','Q=I_2 R=100','n\_ref', 'Location','northeast')
 grid on
-saveas(gcf, 'img/LQR_n_QR_zoom_noDist.svg', 'svg');
+saveas(gcf, 'img/LQR_QR/LQR_n_QR_zoom.svg', 'svg');
 
 
 figure(5)
@@ -89,10 +90,10 @@ grid on
 legend('Q=I_2 R=1','Q=10*I_2 R=1','Q=1000*I_2 R=1','Q=I_2 R=100', 'Location','northeast')
 xlabel("Time [s]")
 ylabel("Voltage [V]")
-saveas(gcf, 'img/LQR_controls_noDist.svg', 'svg');
+saveas(gcf, 'img/LQR_QR/LQR_controls.svg', 'svg');
 
 %% MPC unconstrained
-
+close all
 sim('mpc_unconstrained.slx')
 % Current
 figure(5)
