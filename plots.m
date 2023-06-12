@@ -92,17 +92,34 @@ xlabel("Time [s]")
 ylabel("Voltage [V]")
 saveas(gcf, 'img/LQR_QR/dist/LQR_controls.svg', 'svg');
 
-%% MPC unconstrained
+%% MPC unconstrained vs LQR
 close all
-sim('mpc_unconstrained.slx')
+sim('LQR_MPC_comparison.slx')
+
 % Current
-figure(5)
-plot(out.mpc_unconstrained.Time, out.mpc_unconstrained.Data(:,1), 'LineWidth',2)
+figure(6)
+plot(out.comparison_LQR_MPC.Time, out.comparison_LQR_MPC.Data(:,1), 'LineWidth',2)
+hold on
+plot(out.comparison_LQR_MPC.Time, out.comparison_LQR_MPC.Data(:,3), 'LineWidth',2)
 hold on
 yline(yref(1), 'Color', 'red', 'LineStyle','--', 'LineWidth', 1.5)
 grid on
 legend('i','i\_ref', 'Location','northeast')
 xlabel("Time [s]")
 ylabel("Current [A]")
-saveas(gcf, 'img/LQR_i.svg', 'svg');
+saveas(gcf, 'img/MPC/MPC_LQR_comparison_current.svg', 'svg');
+
+% Velocity
+figure(7)
+plot(out.comparison_LQR_MPC.Time, out.comparison_LQR_MPC.Data(:,2), 'LineWidth',2)
+hold on
+plot(out.comparison_LQR_MPC.Time, out.comparison_LQR_MPC.Data(:,4), 'LineWidth',2)
+hold on
+yline(yref(2), 'Color', 'red', 'LineStyle','--', 'LineWidth', 1.5)
+grid on
+legend('v','v\_ref', 'Location','northeast')
+xlabel("Time [s]")
+ylabel("Current [A]")
+saveas(gcf, 'img/MPC/MPC_LQR_comparison_velocity.svg', 'svg');
+
 
