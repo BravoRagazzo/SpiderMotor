@@ -123,4 +123,35 @@ xlabel("Time [s]")
 ylabel("Velocity [rad/s]")
 saveas(gcf, 'img/MPC/MPC_LQR_comparison_velocity.svg', 'svg');
 
+%% MPC unconstrained vs MPC all constraints
+close all
+sim('mpc_all_constraints_vs_unconstrained.slx')
+
+% Current
+figure(6)
+stairs(out.constr_unconstr.Time, out.constr_unconstr.Data(:,1), 'LineWidth',2,'Color','#e805e8')
+hold on
+stairs(out.constr_unconstr.Time, out.constr_unconstr.Data(:,3), 'LineWidth',2,'Color','#2525f7')
+hold on
+yline(yref(1), 'Color', 'red', 'LineStyle','--', 'LineWidth', 1.5)
+grid on
+legend('i_{allConstr}','i_{unconstr}','i\_ref', 'Location','northeast')
+xlabel("Time [s]")
+ylabel("Current [A]")
+saveas(gcf, 'img/MPC/allConstraintsVSunconstrained/MPC_allConstr_VS_unconstr_current.svg', 'svg');
+
+% Velocity
+figure(7)
+stairs(out.constr_unconstr.Time, out.constr_unconstr.Data(:,2), 'LineWidth',2,'Color','#e805e8')
+hold on
+stairs(out.constr_unconstr.Time, out.constr_unconstr.Data(:,4), 'LineWidth',2,'Color','#2525f7')
+hold on
+yline(yref(2), 'Color', 'red', 'LineStyle','--', 'LineWidth', 1.5)
+grid on
+legend('v_{allConstr}','v_{unconstr}','v\_ref', 'Location','southeast')
+ylim([69 105]);
+xlabel("Time [s]")
+ylabel("Velocity [rad/s]")
+saveas(gcf, 'img/MPC/allConstraintsVSunconstrained/MPC_allConstr_VS_unconstr_velocity.svg', 'svg');
+
 
