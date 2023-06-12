@@ -4,13 +4,13 @@ sim('regulator_LQR_discrete_COMPARISON.mdl')
 
 % Current
 figure(1)
-stairs(out.LQR.Time, out.LQR.Data(:,1), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,1), 'LineWidth',2,'Color','#049902')
 hold on
-stairs(out.LQR.Time, out.LQR.Data(:,3), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,3), 'LineWidth',2,'Color','#e002d9')
 hold on
-stairs(out.LQR.Time, out.LQR.Data(:,5), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,5), 'LineWidth',2,'Color','#f57905')
 hold on
-stairs(out.LQR.Time, out.LQR.Data(:,7), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,7), 'LineWidth',2,'Color','#0531f5')
 hold on
 yline(yref(1), 'Color', 'red', 'LineStyle','--', 'LineWidth', 1.5)
 grid on
@@ -22,13 +22,13 @@ saveas(gcf, 'img/LQR_QR/LQR_i_QR.svg', 'svg');
 figure(2)
 zoomX = [0.059 0.06];
 zoomY = [0.26 0.45];
-stairs(out.LQR.Time, out.LQR.Data(:,1),'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,1),'LineWidth',2,'Color','#049902')
 hold on
-stairs(out.LQR.Time, out.LQR.Data(:,3), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,3), 'LineWidth',2,'Color','#e002d9')
 hold on
-stairs(out.LQR.Time, out.LQR.Data(:,5), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,5), 'LineWidth',2,'Color','#f57905')
 hold on
-stairs(out.LQR.Time, out.LQR.Data(:,7), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,7), 'LineWidth',2,'Color','#0531f5')
 hold on
 yline(yref(1), 'Color', 'red', 'LineStyle','--','LineWidth', 1.5)
 xlim(zoomX);
@@ -41,13 +41,13 @@ saveas(gcf, 'img/LQR_QR/LQR_i_QR_zoom.svg', 'svg');
 
 % Velocity
 figure(3)
-stairs(out.LQR.Time, out.LQR.Data(:,2), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,2), 'LineWidth',2,'Color','#049902')
 hold on
-stairs(out.LQR.Time, out.LQR.Data(:,4), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,4), 'LineWidth',2,'Color','#e002d9')
 hold on
-stairs(out.LQR.Time, out.LQR.Data(:,6), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,6), 'LineWidth',2,'Color','#f57905')
 hold on
-stairs(out.LQR.Time, out.LQR.Data(:,8), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,8), 'LineWidth',2,'Color','#0531f5')
 hold on
 yline(yref(2), 'Color', 'red', 'LineStyle','--', 'LineWidth', 1.5)
 grid on
@@ -60,13 +60,13 @@ saveas(gcf, 'img/LQR_QR/LQR_n_QR.svg', 'svg');
 figure(4)
 zoomX = [0.059 0.06];
 zoomY = [99.5 100.5];
-stairs(out.LQR.Time, out.LQR.Data(:,2),'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,2),'LineWidth',2,'Color','#049902')
 hold on
-stairs(out.LQR.Time, out.LQR.Data(:,4), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,4), 'LineWidth',2,'Color','#e002d9')
 hold on
-stairs(out.LQR.Time, out.LQR.Data(:,6), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,6), 'LineWidth',2,'Color','#f57905')
 hold on
-stairs(out.LQR.Time, out.LQR.Data(:,8), 'LineWidth',2)
+stairs(out.LQR.Time, out.LQR.Data(:,8), 'LineWidth',2,'Color','#0531f5')
 hold on
 yline(yref(2), 'Color', 'red', 'LineStyle','--','LineWidth', 1.5)
 xlim(zoomX);
@@ -79,13 +79,13 @@ saveas(gcf, 'img/LQR_QR/LQR_n_QR_zoom.svg', 'svg');
 
 
 figure(5)
-stairs(out.controlLQR.Time, out.controlLQR.Data(:,1), 'LineWidth',2)
+stairs(out.controlLQR.Time, out.controlLQR.Data(:,1), 'LineWidth',2,'Color','#049902')
 hold on
-stairs(out.controlLQR.Time, out.controlLQR.Data(:,2), 'LineWidth',2)
+stairs(out.controlLQR.Time, out.controlLQR.Data(:,2), 'LineWidth',2,'Color','#e002d9')
 hold on
-stairs(out.controlLQR.Time, out.controlLQR.Data(:,3), 'LineWidth',2)
+stairs(out.controlLQR.Time, out.controlLQR.Data(:,3), 'LineWidth',2,'Color','#f57905')
 hold on
-stairs(out.controlLQR.Time, out.controlLQR.Data(:,4), 'LineWidth',2)
+stairs(out.controlLQR.Time, out.controlLQR.Data(:,4), 'LineWidth',2,'Color','#0531f5')
 grid on
 legend('Q=I_2 R=1','Q=10*I_2 R=1','Q=1000*I_2 R=1','Q=I_2 R=100', 'Location','northeast')
 xlabel("Time [s]")
