@@ -193,9 +193,10 @@
       >Velocity [rad/s]</text
     ></g
     ><g style="stroke-linecap:butt; fill:rgb(37,37,247); text-rendering:geometricPrecision; color-rendering:optimizeQuality; image-rendering:optimizeQuality; stroke:rgb(37,37,247); color-interpolation:linearRGB; stroke-width:4;"
-    ><path d="M108.9226 494.9775 L109.0002 494.9775 L109.0002 494.9814 L759.9991 494.9814 L759.9991 494.9853" style="fill:none; fill-rule:evenodd;"
-      /><path d="M108.9226 421.2766 L109.0002 421.2766 L109.0002 421.2766 L759.9991 421.2766 L759.9991 421.2766" style="fill:none; fill-rule:evenodd; stroke:rgb(4,181,15);"
-      /><path d="M108.9226 388.3713 L109.0002 388.3713 L109.0002 388.3713 L759.9991 388.3713 L759.9991 388.3713" style="fill:none; fill-rule:evenodd; stroke:rgb(232,5,232);"
+    ><path d="M108.9226 303.9765 L109.0002 303.9765 L109.0002 303.9804 L759.9991 303.9804 L759.9991 303.9843" style="fill:none; fill-rule:evenodd;"
+      /><path d="M108.9226 304 L109.0002 304 L109.0002 304 L759.9991 304 L759.9991 304" style="fill:none; fill-rule:evenodd; stroke:rgb(4,181,15);"
+      /><path d="M108.9226 304 L109.0002 304 L109.0002 304 L759.9991 304 L759.9991 304" style="fill:none; fill-rule:evenodd; stroke:rgb(232,5,232);"
+      /><path d="M108.9226 403.5397 L109.0002 403.5397 L109.0002 393.1555 L759.9991 393.1555 L759.9991 383.8262" style="fill:none; fill-rule:evenodd; stroke:rgb(4,173,219);"
     /></g
     ><g style="fill-opacity:0.702; color-rendering:optimizeQuality; color-interpolation:linearRGB; text-rendering:geometricPrecision; stroke:rgb(255,0,0); stroke-linecap:butt; stroke-miterlimit:1; stroke-opacity:0.702; fill:rgb(255,0,0); stroke-dasharray:12,12; stroke-width:3; stroke-linejoin:bevel; image-rendering:optimizeQuality;"
     ><line y2="304" style="fill:none;" x1="109.0002" x2="759.9991" y1="304"

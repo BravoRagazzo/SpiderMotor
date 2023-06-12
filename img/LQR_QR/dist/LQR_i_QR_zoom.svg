@@ -180,10 +180,10 @@
       >Current [A]</text
     ></g
     ><g style="stroke-linecap:butt; fill:rgb(37,37,247); text-rendering:geometricPrecision; color-rendering:optimizeQuality; image-rendering:optimizeQuality; stroke:rgb(37,37,247); color-interpolation:linearRGB; stroke-width:4;"
-    ><path d="M108.9226 238.874 L109.0002 238.874 L109.0002 238.8782 L759.9991 238.8782 L759.9991 238.8776" style="fill:none; fill-rule:evenodd;"
-      /><path d="M108.9226 237.7335 L109.0002 237.7335 L109.0002 237.7335 L759.9991 237.7335 L759.9991 237.7335" style="fill:none; fill-rule:evenodd; stroke:rgb(4,181,15);"
-      /><path d="M108.9226 237.2388 L109.0002 237.2388 L109.0002 237.2388 L759.9991 237.2388 L759.9991 237.2388" style="fill:none; fill-rule:evenodd; stroke:rgb(232,5,232);"
-      /><path d="M108.9226 156.0687 L109.0002 156.0687 L109.0002 165.2813 L759.9991 165.2813 L759.9991 173.5856" style="fill:none; fill-rule:evenodd; stroke:rgb(4,173,219);"
+    ><path d="M108.9226 491.768 L109.0002 491.768 L109.0002 491.7702 L759.9991 491.7702 L759.9991 491.7684" style="fill:none; fill-rule:evenodd;"
+      /><path d="M108.9226 491.7323 L109.0002 491.7323 L109.0002 491.7323 L759.9991 491.7323 L759.9991 491.7323" style="fill:none; fill-rule:evenodd; stroke:rgb(4,181,15);"
+      /><path d="M108.9226 491.7323 L109.0002 491.7323 L109.0002 491.7323 L759.9991 491.7323 L759.9991 491.7323" style="fill:none; fill-rule:evenodd; stroke:rgb(232,5,232);"
+      /><path d="M108.9226 398.0251 L109.0002 398.0251 L109.0002 407.5529 L759.9991 407.5529 L759.9991 416.1407" style="fill:none; fill-rule:evenodd; stroke:rgb(4,173,219);"
     /></g
     ><g style="fill-opacity:0.702; color-rendering:optimizeQuality; color-interpolation:linearRGB; text-rendering:geometricPrecision; stroke:rgb(255,0,0); stroke-linecap:butt; stroke-miterlimit:1; stroke-opacity:0.702; fill:rgb(255,0,0); stroke-dasharray:12,12; stroke-width:3; stroke-linejoin:bevel; image-rendering:optimizeQuality;"
     ><line y2="491.7323" style="fill:none;" x1="109.0002" x2="759.9991" y1="491.7323"
