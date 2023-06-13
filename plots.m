@@ -154,4 +154,68 @@ xlabel("Time [s]")
 ylabel("Velocity [rad/s]")
 saveas(gcf, 'img/MPC/allConstraintsVSunconstrained/MPC_allConstr_VS_unconstr_velocity.svg', 'svg');
 
+%% MPC control constraint comparison N
+close all
+sim('mpc_control_constraints_N.slx')
+
+% Current comparison with different horizons
+figure(8)
+plot(out.MPC_N5.Time, out.MPC_N5.Data(:,1), 'LineWidth',2)
+hold on
+plot(out.MPC_N100.Time, out.MPC_N100.Data(:,1), 'LineWidth',2)
+hold on
+yline(yref(1), 'Color', 'black', 'LineStyle','--', 'LineWidth', 1.5)
+grid on
+legend('i N=5','i N=100', 'Location','northeast')
+xlabel("Time [s]")
+ylabel("Current [A]")
+saveas(gcf, 'img/MPC/controlConstraints/MPC_N_comparison_current.svg', 'svg');
+
+% Velocity comparison with different horizons
+figure(9)
+plot(out.MPC_N5.Time, out.MPC_N5.Data(:,2), 'LineWidth',2)
+hold on
+plot(out.MPC_N100.Time, out.MPC_N100.Data(:,2), 'LineWidth',2)
+hold on
+yline(yref(2), 'Color', 'red', 'LineStyle','--', 'LineWidth', 1.5)
+grid on
+legend('v N=5','v N=100', 'Location','northeast')
+xlabel("Time [s]")
+ylabel("Velocity [rad/s]")
+saveas(gcf, 'img/MPC/controlConstraints/MPC_N_comparison_velocity.svg', 'svg');
+
+%% MPC control constraints comparison with different Q
+close all
+sim('mpc_control_constraints_Q.slx')
+
+% Current comparison with Q = [0.001 0; 0 0.001], Q = [1 0; 0 1], Q = [1000 0; 0 1000]
+figure(9)
+plot(out.MPC_Q1.Time, out.MPC_Q1.Data(:,1), 'LineWidth',2)
+hold on
+plot(out.MPC_Q2.Time, out.MPC_Q2.Data(:,1), 'LineWidth',2)
+hold on
+plot(out.MPC_Q3.Time, out.MPC_Q3.Data(:,1), 'LineWidth',2)
+hold on
+yline(yref(1), 'Color', 'black', 'LineStyle','--', 'LineWidth', 1.5)
+grid on
+legend('i Q=0.001','i Q=1','i Q=1000', 'Location','northeast')
+xlabel("Time [s]")
+ylabel("Current [A]")
+saveas(gcf, 'img/MPC/controlConstraints/MPC_Q_comparison_current.svg', 'svg');
+
+% Velocity comparison with Q = [0.001 0; 0 0.001], Q = [1 0; 0 1], Q = [1000 0; 0 1000]
+figure(10)
+plot(out.MPC_Q1.Time, out.MPC_Q1.Data(:,2), 'LineWidth',2)
+hold on
+plot(out.MPC_Q2.Time, out.MPC_Q2.Data(:,2), 'LineWidth',2)
+hold on
+plot(out.MPC_Q3.Time, out.MPC_Q3.Data(:,2), 'LineWidth',2)
+hold on
+yline(yref(2), 'Color', 'red', 'LineStyle','--', 'LineWidth', 1.5)
+grid on
+legend('v Q=0.001','v Q=1','v Q=1000', 'Location','southeast')
+xlabel("Time [s]")
+ylabel("Velocity [rad/s]")
+saveas(gcf, 'img/MPC/controlConstraints/MPC_Q_comparison_velocity.svg', 'svg');
+
 

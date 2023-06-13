@@ -70,21 +70,11 @@ S2 = Sd;
 % using the final weight equal to infinite horizon Riccati matrix the
 % prediction horizon does not affect the performance
 
-%% change prediction horizon N without LQ final weight
-N1 = 5;
-S1 = Q_LQ;
-
-N2 = 100;
-S2 = Q_LQ;
-
-
-%% 
-N1=5;
-S1=zeros(2);
-
-N2=100;
-S2=zeros(2); 
-
+%% change Q
+N1 = 100;
+Q1 = [0.001 0; 0 0.001]
+Q2 = [1 0; 0 1]
+Q3 = [1000 0; 0 1000]
 %% state constraints
 
 N = 10;
