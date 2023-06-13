@@ -219,4 +219,38 @@ xlabel("Time [s]")
 ylabel("Velocity [rad/s]")
 saveas(gcf, 'img/MPC/controlConstraints/MPC_Q_comparison_velocity.svg', 'svg');
 
+%% Kalman 
+
+close all
+sim('kalman.slx')
+
+% Current
+figure(10)
+stairs(out.kalman.Time, out.kalman.Data(:,1), 'LineWidth',2,'Color','#e805e8')
+hold on
+stairs(out.kalman.Time, out.kalman.Data(:,2), 'LineWidth',2,'Color','#04addb')
+hold on
+yline(yref(1), 'Color', 'red', 'LineStyle','--', 'LineWidth', 1.5)
+grid on
+legend('state','kalman','i\_ref', 'Location','northeast')
+xlabel("Time [s]")
+ylabel("Current [A]")
+saveas(gcf, 'img/MPC/kalman/kalman_current.svg', 'svg');
+
+% Velocity
+figure(11)
+stairs(out.kalman.Time, out.kalman.Data(:,3), 'LineWidth',2,'Color','#e805e8')
+hold on
+stairs(out.kalman.Time, out.kalman.Data(:,4), 'LineWidth',2,'Color','#04addb')
+hold on
+yline(yref(2), 'Color', 'red', 'LineStyle','--', 'LineWidth', 1.5)
+grid on
+ylim([69 105])
+legend('state','kalman','n\_ref', 'Location','southeast')
+xlabel("Time [s]")
+ylabel("Velocity [rad/s]")
+saveas(gcf, 'img/MPC/kalman/kalman_velocity.svg', 'svg');
+
+
+
 
