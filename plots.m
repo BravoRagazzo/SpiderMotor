@@ -228,7 +228,7 @@ sim('kalman.slx')
 figure(10)
 stairs(out.kalman.Time, out.kalman.Data(:,1), 'LineWidth',2,'Color','#e805e8')
 hold on
-stairs(out.kalman.Time, out.kalman.Data(:,2), 'LineWidth',2,'Color','#04addb')
+stairs(out.kalman.Time, out.kalman.Data(:,2), 'LineWidth',2,'Color','#2525f7')
 hold on
 yline(yref(1), 'Color', 'red', 'LineStyle','--', 'LineWidth', 1.5)
 grid on
@@ -241,7 +241,7 @@ saveas(gcf, 'img/MPC/kalman/kalman_current.svg', 'svg');
 figure(11)
 stairs(out.kalman.Time, out.kalman.Data(:,3), 'LineWidth',2,'Color','#e805e8')
 hold on
-stairs(out.kalman.Time, out.kalman.Data(:,4), 'LineWidth',2,'Color','#04addb')
+stairs(out.kalman.Time, out.kalman.Data(:,4), 'LineWidth',2,'Color','#2525f7')
 hold on
 yline(yref(2), 'Color', 'red', 'LineStyle','--', 'LineWidth', 1.5)
 grid on
