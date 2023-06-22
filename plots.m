@@ -88,6 +88,7 @@ hold on
 stairs(out.controlLQR.Time, out.controlLQR.Data(:,3), 'LineWidth',2,'Color','#e805e8')
 grid on
 legend('Q=0.01*I_2','Q=1*I_2','Q=10*I_2','Q=1000*I_2', 'Location','northeast')
+ylim([4 12])
 xlabel("Time [s]")
 ylabel("Voltage [V]")
 saveas(gcf, 'img/LQR_QR/dist/LQR_controls.svg', 'svg');
