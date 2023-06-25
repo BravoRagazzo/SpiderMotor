@@ -47,8 +47,9 @@ R_LQ3 = 100;
 %% Computing uBar and yBar
 nref = 100;
 
-uBar = -(A(1,1)*(-A(2,2)*nref/A(2,1)) + A(1,2)*nref)*L;
 iref = -A(2,2)*nref/A(2,1);
+uBar = -(A(1,1)*iref + A(1,2)*nref)*L;
+
 
 yref = [iref nref]';
 
@@ -77,4 +78,4 @@ Q2 = [1 0; 0 1]
 Q3 = [1000 0; 0 1000]
 %% state constraints
 
-N = 10;
+N=10;

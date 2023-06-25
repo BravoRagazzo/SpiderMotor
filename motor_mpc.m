@@ -44,7 +44,7 @@ options = optimset('Algorithm', 'interior-point-convex','Diagnostics','off',...
 
 U = quadprog(H,f,A_constr,b_constr,[],[],lb,ub,[],options);
 if isempty(U)
-    disp("Unconstrined")
+    disp("Unconstrained")
     U = quadprog(H,f, [],[],[],[],lb,ub,[],options);
 else disp("Constrained")
 end
